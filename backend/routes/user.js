@@ -3,7 +3,6 @@ const zod = require("zod");
 const {Account , User } = require("../db")
  const {JWT_SECRET} = require("../config");
 const authMiddleware = require("../middleware");
-//
 const route = express.Router();
 const jwt = require('jsonwebtoken');
 
@@ -48,7 +47,8 @@ route.post("/signup" , async (req , res)=>{
        
        res.json({
         message : "User create successfully",
-        token : token
+        token : token,
+        userId : dbUser._id
      })
 })
 
@@ -71,7 +71,7 @@ route.post("/signup" , async (req , res)=>{
     });
      
      if(!user){
-        return res.json({
+        return res.status(404).json({
             message: "Error while logging in"
         })
      }
@@ -81,7 +81,7 @@ route.post("/signup" , async (req , res)=>{
       }, JWT_SECRET);
 
 
-        return res.json({
+        return res.status(200).json({
             token : token
            
         })
@@ -109,17 +109,17 @@ route.post("/signup" , async (req , res)=>{
  })
 
   route.get("/bulk" , async (req , res)=>{
-       const filter = req.query.filter || "" ;
-      const users = await User.find({
-         $or : [{
-           firstName : {
-            "$regex" : filter
-           } },{
-            lastName : {
-             "$regex" : filter
-            }
-           }]
-      }) 
+   const filter = req.query.filter || "" ;
+   const users = await User.find({
+      $or : [{
+        firstName : {
+         "$regex" : filter
+        } },{
+         lastName : {
+          "$regex" : filter
+         }
+        }]
+   }) 
       res.json({
          user : users.map(user =>({
            username : user.username,
