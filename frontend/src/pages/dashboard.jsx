@@ -27,7 +27,7 @@ export function Dashboard() {
     }
     , [])
      return <div className="pt-4 px-10 bg-black"> 
-     <div className="rounded-lg bg-slate-300">
+     <div className="rounded-lg bg-slate-500">
       <Appbar></Appbar>
         <Balance  value={balance}></Balance>
         <Users></Users>
