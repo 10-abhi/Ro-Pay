@@ -14,7 +14,7 @@ export function Users(){
             Users
         </div>
         <div className=" my-3 ml-14 mr-28 pb-4">
-            <input type="text" onClick={(e)=>{
+            <input type="text" onChange={(e)=>{
               setFilter(e.target.value);
             }} placeholder="Search users..."  className="w-full" 
             />
@@ -30,7 +30,7 @@ function User ({user}){
  return <div className=" h-20 my-2 ">
       <div className="flex justify-between ml-8 "> <div className="flex">
         <div className=" flex justify-center rounded-full bg-slate-400 pt-2 h-10 w-10 mr-5 ml-7">
-         {user.firstName[0]}
+         {user.firstName[0].toUpperCase()}
       </div>
       <div className="ml-6 mt-1 font-semibold text-lg">
         {user.firstName} {user.lastName}
