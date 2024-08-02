@@ -26,7 +26,7 @@ export function Dashboard() {
       fetchbalance();
     }
     , [])
-     return <div className="pt-4 px-10"> 
+     return <div className="pt-4 px-10 bg-black"> 
      <div className="rounded-lg bg-slate-300">
       <Appbar></Appbar>
         <Balance  value={balance}></Balance>
