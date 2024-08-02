@@ -24,6 +24,7 @@ export function Signin (){
            password
          })
          if(response.status == 200){
+          localStorage.setItem("token" , response.data.token);
           navigate("/dashboard");
          }
      }} ></Button></div>
