@@ -7,10 +7,10 @@ export function Send() {
         const name = searchparams.get("name");
         const id = searchparams.get("id");
         const [amount , setAmount ] = useState(0);
-    return <div className="flex justify-center h-screen bg-gray-100">
+    return <div className="flex justify-center h-screen bg-black">
         <div className="h-full flex flex-col justify-center">
             <div
-                className="border h-min text-card-foreground max-w-md p-4 space-y-8 w-96 bg-white shadow-lg rounded-lg"
+                className="border h-min text-card-foreground max-w-md p-4 space-y-8 w-96 bg-slate-500 shadow-lg rounded-lg"
             >
                 <div className="flex flex-col space-y-1.5 p-6">
                 <h2 className="text-3xl font-bold text-center">Send Money</h2>
