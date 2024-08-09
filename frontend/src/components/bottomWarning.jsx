@@ -1,10 +1,10 @@
 import {Link} from "react-router-dom"
 export const BottomWarning = ({label,buttonText, to})=>{
-   return <div className="py-2 text-sm flex justify-center">
+   return <div className="py-2 text-sm text-slate-400 flex justify-center">
     <div>
     {label}
      </div>
-     <Link className=" text-stone-900 pointer underline pl-1 cursor-pointer" to={to}>
+     <Link className="  pointer underline pl-1 cursor-pointer" to={to}>
      {buttonText}
      </Link>    
     </div>
