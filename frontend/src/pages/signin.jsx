@@ -10,7 +10,9 @@ export function Signin (){
       const [username , setUsername] = useState("");
       const [password , setPassword] = useState("");
       const navigate = useNavigate();
-  return  <div className="flex justify-center bg-gradient-to-tl from-cyan-900 to-zinc-800 h-screen">
+  return  <div className="flex justify-center h-screen w-screen " style={{
+     backgroundImage : `url(../src/assets/unsplashbg.jpg)`,
+  }}>
     <div className="flex flex-col justify-center">
       <div className="w-96 bg-white rounded-lg text-center px-4 p-2 h-max"> 
        
