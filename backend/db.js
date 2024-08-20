@@ -5,8 +5,8 @@ require('dotenv').config();
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
- 
- 
+    
+    
 const userSchema = new mongoose.Schema({
     firstName: {
       type : String,

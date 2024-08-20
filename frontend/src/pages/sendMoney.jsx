@@ -51,7 +51,7 @@ export function Send() {
                         })
                     } }>
                         Initiate Transfer
-                    </button>
+             </button>
                 </div>
                 </div>
         </div>

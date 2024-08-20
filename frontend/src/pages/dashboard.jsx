@@ -26,8 +26,8 @@ export function Dashboard() {
       fetchbalance();
     }
     , [])
-     return <div className="pt-4 px-10 bg-black"> 
-     <div className="rounded-lg bg-slate-500">
+     return <div className=" h-screen w-screen py-4 px-2 bg-black"> 
+     <div className="rounded-lg bg-slate-500 h-full w-full">
       <Appbar></Appbar>
         <Balance  value={balance}></Balance>
         <Users></Users>

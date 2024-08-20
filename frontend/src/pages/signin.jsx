@@ -14,7 +14,7 @@ export function Signin (){
      backgroundImage : `url(../src/assets/unsplashbg.jpg)`,
   }}>
     <div className="flex flex-col justify-center">
-      <div className="w-96 bg-white rounded-lg text-center px-4 p-2 h-max"> 
+      <div className="w-96 bg-slate-50/10 rounded-lg text-center px-4 p-2 h-max"> 
        
      <Heading label={"Sign In"} ></Heading>
      <SubHeading label={"Enter your credentials to access your account"}></SubHeading>
