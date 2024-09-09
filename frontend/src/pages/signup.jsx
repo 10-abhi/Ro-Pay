@@ -14,10 +14,7 @@ export function Signup (){
     const [password , setPassword] = useState("");
     const navigate = useNavigate();
     
-    return <div className="flex justify-center h-screen w-screen" style={{
-        backgroundImage: `url(../src/assets/unsplashbg.jpg)`,
-    
-        }}> 
+    return <div className="flex justify-center h-screen w-screen bg-[url('/src/assets/unsplashbg.jpg')]" >
        
         <div className="flex flex-col justify-center">
             <div className="rounded-lg bg-slate-50/10 w-90 text-center p-2 h-max px-4">
