@@ -25,7 +25,7 @@ export function Signup (){
         <InputBox label={"username"} placeholder={"xyz@gmail.com"} onChange={e=>{setUsername(e.target.value)}}></InputBox>
         <InputBox label={"password"} placeholder={"12345"} onChange={e=>{setPassword(e.target.value)}}></InputBox>
         <Button onClick={async ()=>{
-            const response = await axios.post("http://localhost:3000/api/v1/user/signup" , {
+            const response = await axios.post("https://ro-paybackend.vercel.app/api/v1/user/signup" , {
                 username,
                 password,
                 firstName,
