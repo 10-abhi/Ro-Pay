@@ -25,17 +25,20 @@ export function Signup (){
         <InputBox label={"username"} placeholder={"xyz@gmail.com"} onChange={e=>{setUsername(e.target.value)}}></InputBox>
         <InputBox label={"password"} placeholder={"12345"} onChange={e=>{setPassword(e.target.value)}}></InputBox>
         <Button onClick={async ()=>{
-            const response = await axios.post("https://ro-paybackend.vercel.app/api/v1/user/signup" , {
+            const response = await axios.post("https://backend-rho-lilac-22.vercel.app/api/v1/user/signup" , {
                 username,
                 password,
                 firstName,
                 lastName
             })
-            localStorage.setItem("token" , response.data.token);
-            navigate("/dashboard")
+            if(response.data.token){
+               localStorage.setItem("token" , response.data.token);
+            navigate("/dashboard") 
+            }
+            
         }} label={"Sign up"}></Button>
         </div>
-         <BottomWarning label={"Alread have an account?"} buttonText={"Sign in"} to={"/signin"}  ></BottomWarning>
+         <BottomWarning label={"Alread have an account?"} buttonText={"Sign in"} to={"/signin"}></BottomWarning>
         </div>
     </div>
 }
