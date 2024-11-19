@@ -6,7 +6,7 @@ export function Users(){
       const [filter , setFilter] = useState([]);
 
        useEffect(()=>{
-        axios.get("https://ro-paybackend.vercel.app/api/v1/user/bulk?filter="+filter)
+        axios.get("https://backend-rho-lilac-22.vercel.app/api/v1/user/bulk?filter="+filter)
         .then(response=>{setUsers(response.data.user)})
        }, [filter])
      return <div className="h-max w-full pb-28  px-14">

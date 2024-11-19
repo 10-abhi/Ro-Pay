@@ -14,7 +14,7 @@ export function Dashboard() {
         }
         try{
         
-        const response = await axios.get("https://ro-paybackend.vercel.app/api/v1/account/balance", {
+        const response = await axios.get("https://backend-rho-lilac-22.vercel.app/api/v1/account/balance", {
           headers:{
             Authorization: `Bearer ${token}`
           }
