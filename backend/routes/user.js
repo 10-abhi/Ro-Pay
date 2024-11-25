@@ -59,6 +59,8 @@ route.post("/signup" , async (req , res)=>{
 
     route.post("/signin" , async (req , res)=>{
      const body = req.body;
+     const username = req.body.username;
+     const password = req.body.password;
      const {success} = signinZodSchema.safeParse(body);
      if(!success){
       return res.json({
@@ -66,8 +68,7 @@ route.post("/signup" , async (req , res)=>{
       })
      }
      const user = await User.findOne({
-        username : req.body.username,
-        password : req.body.password
+        username : username
     });
      
      if(!user){
@@ -75,17 +76,19 @@ route.post("/signup" , async (req , res)=>{
             message: "Error while logging in"
         })
      }
-     else{
-      const token = jwt.sign({
-         userId : user._id
-      }, JWT_SECRET);
-
-
-        return res.status(200).json({
+     if(user.isValidPassword(password)){
+          console.log('Password is valid');
+          const token = jwt.sign({
+            userId : user._id
+         }, JWT_SECRET);
+         return res.status(200).json({
             token : token
            
         })
-        
+     }else{
+     return res.json({
+      message : "Password must be not valid !! try again"
+     })
      }
 })
   

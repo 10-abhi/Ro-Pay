@@ -9,9 +9,10 @@ route.get("/balance" , authMiddleware , async (req , res)=>{
    const accounta1 = await Account.findOne({
       userId : req.userId
    })
-
+   const balance = accounta1.balance;
+   const Newbalance = await accounta1.Decrypter(balance);
    res.json({
-    balance : accounta1.balance
+    balance : Newbalance
    });
 
 })
